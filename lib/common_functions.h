@@ -2,7 +2,8 @@
 #define COMMONFUNCTIONSH
 
 	int randNumGenerator(int, int);
-	void writePhysicalTable();
+	void writePhysicalTable(int, char *); 
+	int randCharGenerator();
 	void writePageTable();
 
 #endif
