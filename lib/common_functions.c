@@ -34,12 +34,25 @@ void writePhysicalTable(int physicalMemorySize, char *physicalMemory)
     fclose(file);
 }
 
-void writePageTable()
+void writePageTable(int counter, char *physicalMemory)
 {
     FILE *file;
 
     file = fopen("./data/page_table.txt", "w");
-    fprintf(file, "Page | Page Table Entry\n-----| ----------------\n");
+    fprintf(file, "Page\t|\t Page Table Entry\n");
+    fprintf(file, "-----\t|\t ----------------\n");
+
+    for(int x = 0; x < counter; ++x) //pass in Address Size
+    {
+        int value = *physicalMemory;
+        if(value < 0)
+        {
+            value = value + 256;
+        }
+        fprintf(file, "0x%x\t\t|\t\t%d\n", x, value);
+        physicalMemory++;
+        // printf("Function Value: %c\n", *physicalMemory);
+    }
 
     fclose(file);
 }

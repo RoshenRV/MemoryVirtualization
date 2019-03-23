@@ -4,6 +4,6 @@
 	int randNumGenerator(int, int);
 	void writePhysicalTable(int, char *); 
 	int randCharGenerator();
-	void writePageTable();
+	void writePageTable(int, char *);
 
 #endif
