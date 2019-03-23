@@ -12,3 +12,4 @@ dist/common_functions.o: lib/common_functions.c
 
 clean:
 	rm -rf ./dist && mkdir dist
+	rm -rf ./data && mkdir data
