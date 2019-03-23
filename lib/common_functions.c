@@ -56,3 +56,21 @@ void writePageTable(int counter, char *physicalMemory)
 
     fclose(file);
 }
+
+void writeHardDriveMemoryTable(int physicalMemorySize, char *hardDriveMemory)
+{
+    FILE *file;
+
+    file = fopen("./data/hardrive_memory.txt", "w");
+    fprintf(file, "Address | Frame | Content\n");
+    fprintf(file, "--------|-------|--------\n");
+
+    for(int x = 0; x < physicalMemorySize; ++x) //pass in Address Size
+    {
+        fprintf(file, "0x%x\t|\t%d\t|\t%c\n", x , x/256, *hardDriveMemory);
+        hardDriveMemory++;
+        // printf("Function Value: %c\n", *physicalMemory);
+    }
+    
+    fclose(file);
+}
