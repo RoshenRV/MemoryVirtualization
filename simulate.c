@@ -103,6 +103,10 @@ int main()
 					swap(&physicalMemory[correspondingPhysicalAddress], &hardDriveMemory[correspondingPhysicalAddress]);
 					printf("Current Content at Physical Address 0x%x: %c\n", correspondingPhysicalAddress, physicalMemory[correspondingPhysicalAddress]);
 				}
+				else
+				{
+					printf("Content at the Physical Address: %c\n",physicalMemory[correspondingPhysicalAddress]);
+				}
 			}
 		}
 	}while(userInputVirtualAddress != -1);
